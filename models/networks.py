@@ -228,9 +228,9 @@ class LAAFNet(nn.Module):
             nn.Conv2d(channel2 // reduction, channel2, 1, bias=False)
         )
 
-        self.pixel_conv = nn.Conv2d(6, 6, kernel_size=spatial_kernel,
+        self.pixel_conv = nn.Conv2d(4, 4, kernel_size=spatial_kernel,
                                     padding=spatial_kernel // 2, bias=False)
-        self.pixel_weight_conv = nn.Conv2d(6, 1, kernel_size=spatial_kernel,
+        self.pixel_weight_conv = nn.Conv2d(4, 1, kernel_size=spatial_kernel,
                                    padding=spatial_kernel // 2, bias=False)
 
         self.sigmoid = nn.Sigmoid()
@@ -253,12 +253,14 @@ class LAAFNet(nn.Module):
         max_out1, _ = torch.max(x1, dim=1, keepdim=True)
         avg_out1 = torch.mean(x1, dim=1, keepdim=True)
         min_out1,_ = torch.min(x1, dim=1, keepdim=True)
-        max_out2, _ = torch.max(x2, dim=1, keepdim=True)
+        # max_out2, _ = torch.max(x2, dim=1, keepdim=True)
         avg_out2 = torch.mean(x2, dim=1, keepdim=True)
-        min_out2,_ = torch.min(x1, dim=1, keepdim=True)
+        # min_out2,_ = torch.min(x1, dim=1, keepdim=True)
+        # spatial_out = self.sigmoid(
+        #     self.pixel_weight_conv(self.pixel_conv(torch.cat([max_out1, avg_out1, max_out2, avg_out2,min_out1,min_out2], dim=1))))
         spatial_out = self.sigmoid(
-            self.pixel_weight_conv(self.pixel_conv(torch.cat([max_out1, avg_out1, max_out2, avg_out2,min_out1,min_out2], dim=1))))
-
+            self.pixel_weight_conv(
+                self.pixel_conv(torch.cat([max_out1, avg_out1, max_out2, avg_out2], dim=1))))
         x = torch.cat([x1, x2], dim=1)
 
         x = x * spatial_out
