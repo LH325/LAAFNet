@@ -7,3 +7,6 @@ This project uses the WGTDataset.
 ### Download Links
 - [Baidu Cloud] https://pan.baidu.com/s/1iS-LoQCkPObaNK7huuzVgg?pwd=iyrx
 - Extraction Code: iyrx 
+### Weight Links
+- [Baidu Cloud] https://pan.baidu.com/s/1IDf0A3GHMG2aFzCPMEMisg?pwd=n5kq
+- Extraction Code: n5kq 
