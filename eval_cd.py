@@ -21,7 +21,7 @@ def main():
 
     # data
     parser.add_argument('--num_workers', default=0, type=int)
-    parser.add_argument('--dataset', default='RNDataset', type=str)
+    parser.add_argument('--dataset', default='WGTDataset', type=str)
 
     parser.add_argument('--data_name', default='DG', type=str)
 
@@ -56,4 +56,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
