@@ -5,8 +5,8 @@ We have uploaded the code and dataset in advance. Since the current code is some
 This project uses the WGTDataset.
 
 ### Download Links
-- [Baidu Cloud] https://pan.baidu.com/s/1iS-LoQCkPObaNK7huuzVgg?pwd=iyrx
-- Extraction Code: iyrx 
+- [Baidu Cloud] 
+- Extraction Code
 ### Weight Links
-- [Baidu Cloud] https://pan.baidu.com/s/1IDf0A3GHMG2aFzCPMEMisg?pwd=n5kq
-- Extraction Code: n5kq 
+- [Baidu Cloud] 
+- Extraction Code
